@@ -1,0 +1,23 @@
+.home-container {
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+};
+
+.home-container__title {
+    font-size: 4rem;
+    color: whitesmoke;
+}
+
+.home-container__subtitle {
+    margin-top: 1rem;
+    font-size: 24px;
+    color: grayscale($color: #2c2b2b)
+}
+
+.home-container__icons {
+    margin-top: 0.5rem;
+}
