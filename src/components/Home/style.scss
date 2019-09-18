@@ -5,19 +5,34 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+        .home-container__title {
+            font-size: 4rem;
+            font-family: 'Quicksand', 'Raleway','Chilanka', sans-serif;
+            color: whitesmoke;
+        }
+
+        .home-container__subtitle {
+            margin-top: 1rem;
+            font-size: 24px;
+            color: grayscale($color: #2c2b2b)
+        }
+
+        .home-container__icons-container {
+            display: flex;
+            width: 120px;
+            flex-direction: row;
+            margin-top: 1rem;
+            justify-content: space-between;
+        
+
+        .home-container__icons-container--icon {
+            font-size: 2rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    }
 };
-
-.home-container__title {
-    font-size: 4rem;
-    color: whitesmoke;
-}
-
-.home-container__subtitle {
-    margin-top: 1rem;
-    font-size: 24px;
-    color: grayscale($color: #2c2b2b)
-}
-
-.home-container__icons {
-    margin-top: 0.5rem;
-}
