@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Container, Grid, Typography } from '@material-ui/core';
 
 import { GithubIcon, LinkedinIcon, MailIcon } from '../../icons';
@@ -6,10 +6,29 @@ import { GithubIcon, LinkedinIcon, MailIcon } from '../../icons';
 import './style.scss';
 
 const Home = () => {
+    
+    const wordtest = ['Hola, soy', "Hello, I'm", "Hallo, ich bin", "Ciao, sono", "Salut! Je suis", "Oi! Sou"];
+
+    const [word, setWord] = useState(wordtest[0]);
+
+    // const handleWordChange = () => {
+    //     setTimeout(() => {setWord(
+    //         word => word = wordtest[Math.floor(Math.random()*wordtest.length)],
+    //     )}, 3000);
+    //     return word;
+    // }
+
+    
+    useEffect(() =>{
+        setTimeout(() => {setWord(
+            word => word = wordtest[Math.floor(Math.random()*wordtest.length)],
+        )}, 3000);
+    }, [word])
+    
     return (
         <Container className="home-container">
                 <Grid>
-                    <span className="home-container__title">Jordi Gandía Cerdá</span>
+                    <span className="home-container__title">{word} Jordi Gandía</span>
                 </Grid>
                 <Grid className="home-container__subtitle">
                     <Typography variant="h5">web Developer</Typography>
