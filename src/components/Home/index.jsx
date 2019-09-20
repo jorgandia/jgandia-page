@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Container, Grid, Typography } from '@material-ui/core';
 
 import { GithubIcon, LinkedinIcon, MailIcon } from '../../icons';
+import Flip from 'react-reveal/Flip';
 
 import './style.scss';
 
@@ -11,24 +12,25 @@ const Home = () => {
 
     const [word, setWord] = useState(wordtest[0]);
 
-    // const handleWordChange = () => {
+    const handleWordChange = () => {
+        setTimeout(() => {setWord(
+            word => word = wordtest[Math.floor(Math.random()*wordtest.length)],
+        )}, 5000);
+        console.log(word);
+        return (<Flip top>{word}</Flip>);
+    }
+
+    
+    // useEffect(() =>{
     //     setTimeout(() => {setWord(
     //         word => word = wordtest[Math.floor(Math.random()*wordtest.length)],
     //     )}, 3000);
-    //     return word;
-    // }
-
-    
-    useEffect(() =>{
-        setTimeout(() => {setWord(
-            word => word = wordtest[Math.floor(Math.random()*wordtest.length)],
-        )}, 3000);
-    }, [word])
+    // }, [word])
     
     return (
         <Container className="home-container">
                 <Grid>
-                    <span className="home-container__title">{word} Jordi Gandía</span>
+                    <Grid className="home-container__title">{handleWordChange()} Jordi Gandía</Grid>
                 </Grid>
                 <Grid className="home-container__subtitle">
                     <Typography variant="h5">web Developer</Typography>
