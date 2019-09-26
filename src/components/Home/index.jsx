@@ -17,7 +17,8 @@ const Home = () => {
    const underlined = word==="Hello, I'm" ? true : false;
    const bigScreen = useMediaQuery('(min-width: 851px)');
    const mediumScreen = useMediaQuery('(min-width: 651px) and (max-width: 850px)')
-   const smallScreen = useMediaQuery('(max-width: 650px)');
+   const smallScreen = useMediaQuery('(min-width: 600px) and (max-width: 650px)');
+   const mobileScreen = useMediaQuery('(min-width: 599px)');
 
    const handleScreenSize = () => {
      if (mediumScreen){
@@ -26,6 +27,8 @@ const Home = () => {
             return "home-container__title small-screen";
     } else if (bigScreen){
         return "home-container__title big-screen";
+    } else if(mobileScreen){
+        return "home-container__title mobile-screen";
     }
    };
 
