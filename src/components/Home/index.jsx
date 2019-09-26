@@ -8,7 +8,7 @@ import Flip from 'react-reveal/Flip';
 import './style.scss';
 
 const Home = () => {
-    
+
    const wordtest = ["Hola, soy", "Hola, sóc", "Hallo, ich bin", "Ciao, sono", "Salut! Je suis", "Oi! Sou", "Hello, I'm"];
 
 
