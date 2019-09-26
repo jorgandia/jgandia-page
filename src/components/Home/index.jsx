@@ -16,8 +16,8 @@ const Home = () => {
 
    const underlined = word==="Hello, I'm" ? true : false;
    const bigScreen = useMediaQuery('(min-width: 851px)');
-   const mediumScreen = useMediaQuery('(min-width: 641px) and (max-width: 850px)')
-   const smallScreen = useMediaQuery('(max-width: 640px)');
+   const mediumScreen = useMediaQuery('(min-width: 621px) and (max-width: 850px)')
+   const smallScreen = useMediaQuery('(max-width: 620px)');
 
    const handleScreenSize = () => {
      if (mediumScreen){
