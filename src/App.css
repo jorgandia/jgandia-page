@@ -1,7 +1,7 @@
 body {
-  background-color: #afafaf;
+	background: radial-gradient(circle, #b9b8bf 10%, #747173 60%);
 }
 
 .App {
-  text-align: center;
+	text-align: center;
 }
