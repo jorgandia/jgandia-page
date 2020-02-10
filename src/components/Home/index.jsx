@@ -1,4 +1,4 @@
-import React, {useState, useLayoutEffect} from 'react';
+import React, {Fragment, useState, useLayoutEffect} from 'react';
 import { Container, Grid, Tooltip } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
@@ -6,6 +6,7 @@ import { GithubIcon, LinkedinIcon, MailIcon } from '../../icons';
 import Flip from 'react-reveal/Flip';
 
 import './style.scss';
+import ParticlesComponent from '../ParticlesComponent';
 
 const Home = () => {
 
@@ -37,25 +38,29 @@ const Home = () => {
         }, [])
 
     return (
-        <Container className="home-container">
-                <Grid className={ underlined ? "definitive-underLine" : "underline"}>
-                   <Grid className={handleScreenSize()}><Flip top key={word}>{word}</Flip> Jordi Gandía</Grid>
-                </Grid>
-                <Grid className="home-container__subtitle">
-                    Web Developer
-                </Grid>
-                <Grid className="home-container__icons-container">
-                <Tooltip title="LinkedIn">
-                    <a target="blank" href="https://www.linkedin.com/in/jordi-gandia-cerda/"><LinkedinIcon className="home-container__icons-container--icon"/></a>
-                </Tooltip>
-                <Tooltip title="GitHub">
-                    <a href="https://github.com/jorgandia?tab=repositories"><GithubIcon className="home-container__icons-container--icon" /></a>
-                </Tooltip>
-                <Tooltip title="Let's talk!">
-                    <a href="mailto:jorgancer@gmail.com"><MailIcon className="home-container__icons-container--icon" /></a>
+        <Fragment>
+            <ParticlesComponent/>
+            <Container className="home-container">
+                    <Grid className={ underlined ? "definitive-underLine" : "underline"}>
+                    <Grid className={handleScreenSize()}><Flip top key={word}>{word}</Flip> Jordi Gandía</Grid>
+                    </Grid>
+                    <Grid className="home-container__subtitle">
+                        Web Developer
+                    </Grid>
+                    <Grid className="home-container__icons-container">
+                    <Tooltip title="LinkedIn">
+                        <a target="blank" href="https://www.linkedin.com/in/jordi-gandia-cerda/"><LinkedinIcon className="home-container__icons-container--icon"/></a>
                     </Tooltip>
-                </Grid>
-        </Container>)
+                    <Tooltip title="GitHub">
+                        <a href="https://github.com/jorgandia?tab=repositories"><GithubIcon className="home-container__icons-container--icon" /></a>
+                    </Tooltip>
+                    <Tooltip title="Let's talk!">
+                        <a href="mailto:jorgancer@gmail.com"><MailIcon className="home-container__icons-container--icon" /></a>
+                        </Tooltip>
+                    </Grid>
+            </Container>
+        </Fragment>
+    )
 }
 
 export default Home;
