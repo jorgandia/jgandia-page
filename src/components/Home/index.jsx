@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useLayoutEffect} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import { Container, Grid, Tooltip } from '@material-ui/core';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
@@ -10,12 +10,12 @@ import ParticlesComponent from '../ParticlesComponent';
 
 const Home = () => {
 
-   const wordtest = ["Hola, soy", "Hola, sóc", "Hallo, ich bin", "Ciao, sono", "Salut! Je suis", "Oi! Sou", "Hello, I'm"];
+   const words = ["Hola, soy", "Hola, sóc", "Hallo, ich bin", "Ciao, sono", "Salut! Je suis", "Oi! Sou", "Hello, I'm"];
 
 
-   const [word, setWord] = useState(wordtest[0]);
+   const [word, setWord] = useState(words[0]);
 
-   const underlined = word==="Hello, I'm" ? true : false;
+   const underlined = word === "Hello, I'm";
    const bigScreen = useMediaQuery('(min-width: 851px)');
    const mediumScreen = useMediaQuery('(min-width: 621px) and (max-width: 850px)')
    const smallScreen = useMediaQuery('(max-width: 620px)');
@@ -30,8 +30,8 @@ const Home = () => {
     }
    };
 
-    useLayoutEffect (() =>{
-        wordtest.forEach((value, index)=>{
+    useEffect (() =>{
+        words.forEach((value, index)=>{
             setTimeout(()=>
             {setWord(value)}, index * 2000)
             });
@@ -39,7 +39,7 @@ const Home = () => {
 
     return (
         <Fragment>
-            <ParticlesComponent/>
+            {bigScreen && <ParticlesComponent/>}
             <Container className="home-container">
                     <Grid className={ underlined ? "definitive-underLine" : "underline"}>
                     <Grid className={handleScreenSize()}><Flip top key={word}>{word}</Flip> Jordi Gandía</Grid>
