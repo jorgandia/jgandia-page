@@ -39,7 +39,6 @@ const Home = () => {
 
     return (
         <Fragment>
-            {bigScreen && <ParticlesComponent/>}
             <Container className="home-container">
                     <Grid className={ underlined ? "definitive-underLine" : "underline"}>
                     <Grid className={handleScreenSize()}><Flip top key={word}>{word}</Flip> Jordi Gandía</Grid>
@@ -59,6 +58,7 @@ const Home = () => {
                         </Tooltip>
                     </Grid>
             </Container>
+            {bigScreen && <ParticlesComponent />}
         </Fragment>
     )
 }

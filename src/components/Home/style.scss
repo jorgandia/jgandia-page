@@ -51,6 +51,7 @@
 		flex-direction: row;
 		margin-top: 1rem;
 		justify-content: space-between;
+		z-index: 1;
 
 		.home-container__icons-container--icon {
 			font-size: 2rem;
@@ -73,6 +74,7 @@
 	padding-bottom: 4px;
 	margin-bottom: 10px;
 }
+
 .underline:after {
 	position: absolute;
 	content: '';
@@ -82,6 +84,16 @@
 	width: 0%;
 	background-color: #ffffff7c;
 	animation: underline 14s;
+}
+
+.home-container__icons-container a {
+	display: inline-block;
+	transition: transform 0.2s;
+	cursor: pointer;
+}
+
+.home-container__icons-container a:hover {
+	transform: translateY(-10px) scale(2);
 }
 
 @keyframes underline {
