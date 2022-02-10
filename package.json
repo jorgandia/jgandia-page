@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.4.2",
     "clipboard": "^2.0.4",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "particles.js": "^2.0.0",
     "react": "^16.9.0",
     "react-device-detect": "^1.9.9",
